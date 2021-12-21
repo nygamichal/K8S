@@ -1,4 +1,4 @@
-# k8s2
+# Template for POD from k8s2 exercise.
 apiVersion: v1
 kind: Pod
 metadata:
