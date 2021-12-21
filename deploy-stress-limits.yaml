@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: stress-pod
+  name: stress-pod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stress-pod
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: stress-pod
+    spec:
+      containers:
+      - image: polinux/stress
+        name: stress
+        resources: {}
+status: {}
