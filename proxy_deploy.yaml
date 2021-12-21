@@ -1,3 +1,6 @@
+# Prepare YAML file for future usage by using --dry-run=client
+# Outcome of command:
+# kubectl create deployment proxy --image=nginx:1.17.0-alpine --dry-run=client -o yaml > proxy_deploy.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
