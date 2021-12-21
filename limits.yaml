@@ -1,4 +1,5 @@
 # Template for POD from k8s2 exercise.
+# K8S always terminate the container due to too high usage of memory, which do not follow the limits.
 apiVersion: v1
 kind: Pod
 metadata:
@@ -13,7 +14,7 @@ spec:
       - --vm
       - "1"
       - --vm-bytes
-      - 100M
+      - 100M #memory is bigger than the limits from line 25.
       - --vm-hang
       - "1"
     command:
@@ -21,7 +22,7 @@ spec:
     image: polinux/stress
     resources:
       limits:
-        memory: "64Mi"
+        memory: "64Mi" 
         cpu: "100m"
   dnsPolicy: ClusterFirst
   restartPolicy: Always
