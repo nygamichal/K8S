@@ -16,9 +16,22 @@ spec:
       creationTimestamp: null
       labels:
         app: stress-pod
+    # Copied from pod-stress-limits.yaml
     spec:
       containers:
       - image: polinux/stress
+        args:
+         - --vm
+         - "1"
+         - --vm-bytes
+         - 100M #memory is bigger than the limits from line 25, changing to lower than in limits and container will run.
+         - --vm-hang
+         - "1"
+        command:
+        - stress
         name: stress
-        resources: {}
+        resources:
+          limits:
+            memory: "64Mi" 
+            cpu: "100m"
 status: {}
