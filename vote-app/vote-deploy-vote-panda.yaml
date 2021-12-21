@@ -1,0 +1,32 @@
+# Outcome from:
+# kubectl create deploy vote --image=pandaacademy/vote:1.0 --namespace=vote --dry-run=client -o yaml > vote-deploy-vote.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: vote
+  name: vote
+  namespace: vote
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vote
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: vote
+    spec:
+      containers:
+      - image: pandaacademy/vote:1.0
+        name: vote
+        resources: {}
+        
+        #Added manually
+        env:
+        - name: REDIS_HOST
+          value: redis-svc.database
+status: {}

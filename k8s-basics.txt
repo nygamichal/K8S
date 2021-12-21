@@ -1,0 +1,30 @@
+please do not. -> #! /bin/bash
+
+minikube status
+kubectl cluster-info
+cat .kube/config 
+
+# List all resources.
+kubectl api-resources
+# extended table
+kubectl api-resources -o wide
+
+
+# List resources, e.g.
+kubectl get namespaces #kubectl get ns
+kubectl get pods
+kubectl get nodes
+kubectl get services #kubectl get svc
+
+kubectl:
+- get
+- describe 
+- delete
+- create
+
+# POD
+kubectl <cmd> pod <POD_name>
+- run
+- describe
+- logs
+- exec

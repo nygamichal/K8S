@@ -1,0 +1,26 @@
+# Outcome from:
+# kubectl create svc clusterip db-svc --tcp=5432:5432 --namespace=database --dry-run=client -o yaml > vote-postgres-svc.yaml
+#
+# Execute it by:
+# kubectl apply -f <filename.yaml>
+
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: db-svc
+  name: db-svc
+  namespace: database
+spec:
+  ports:
+  - name: 5432-5432
+    port: 5432
+    protocol: TCP
+    targetPort: 5432
+  selector:
+    app: db #Manually changed.
+    #app: db-svc #Auto delivered.
+  type: ClusterIP
+status:
+  loadBalancer: {}

@@ -1,0 +1,38 @@
+# Outcome from:
+# kubectl create deploy db --image=postgres:9.4 --namespace=database --dry-run=client -o yaml > vote-deploy-db-postgres.yaml
+#
+# Execute it by:
+# kubectl apply -f <filename.yaml>
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: db
+  name: db
+  namespace: database
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: db
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: db
+    spec:
+      containers:
+      - image: postgres:9.4
+        name: postgres
+        resources: {}
+        
+        #Added manually
+        env:
+        - name: POSTGRES_USER
+          value: "root"
+        - name: POSTGRES_PASSWORD
+          value: "root"
+status: {}

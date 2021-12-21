@@ -1,0 +1,36 @@
+# Outcome from:
+# kubectl create deploy result --image=pandaacademy/result:1.0 --namespace=result --dry-run=client -o yaml > vote-deploy-result.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: result
+  name: result
+  namespace: result
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: result
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: result
+    spec:
+      containers:
+      - image: pandaacademy/result:1.0
+        name: result
+        resources: {}
+
+        #Added manually
+        env:
+        - name: POSTGRES_USER
+          value: "root"
+        - name: POSTGRES_PASSWORD
+          value: "root"
+        - name: DB_HOST
+          value: db-svc.database
+status: {}

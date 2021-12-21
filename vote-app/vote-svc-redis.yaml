@@ -1,5 +1,9 @@
 # Outcome from:
 # kubectl create svc clusterip redis-svc --tcp=6379:6379 --namespace=database --dry-run=client -o yaml > vote-redis-svc.yaml
+#
+# Execute it by:
+# kubectl apply -f <filename.yaml>
+
 apiVersion: v1
 kind: Service
 metadata:

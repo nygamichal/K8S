@@ -1,0 +1,26 @@
+# Outcome from:
+# kubectl create svc nodeport vote-svc --tcp=5000:80 --namespace=vote --dry-run=client -o yaml > vote-svc-vote.yaml
+#
+# Execute it by:
+# kubectl apply -f <filename.yaml>
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: vote-svc
+  name: vote-svc
+  namespace: vote
+spec:
+  ports:
+  - name: 5000-80
+    port: 5000
+    protocol: TCP
+    targetPort: 80
+    nodePort: 31000 #Manually added.
+  selector:
+    app: vote #Manually changed.
+    # app: vote-svc #Auto delivered.
+  type: NodePort
+status:
+  loadBalancer: {}
