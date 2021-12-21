@@ -9,7 +9,7 @@ metadata:
     app: proxy
   name: proxy
 spec:
-  replicas: 1
+  replicas: 5
   selector:
     matchLabels:
       app: proxy
