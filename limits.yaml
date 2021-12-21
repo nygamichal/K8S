@@ -1,0 +1,28 @@
+# Template for POD from k8s2 exercise.
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: stress-pod
+  name: stress-pod
+spec:
+  containers:
+  - name: stress-pod
+    args:
+      - --vm
+      - "1"
+      - --vm-bytes
+      - 100M
+      - --vm-hang
+      - "1"
+    command:
+    - stress
+    image: polinux/stress
+    resources:
+      limits:
+        memory: "64Mi"
+        cpu: "100m"
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
