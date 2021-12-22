@@ -1,4 +1,4 @@
-please do not. -> #! /bin/bash
+#! /bin/bash
 
 minikube status
 kubectl cluster-info
