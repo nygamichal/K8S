@@ -1,4 +1,5 @@
-# Kubernetes exercise
+# Quick reminders for Kubernetes 
+Main catalog contains raw files which were used during course.
 
-Main catalog contains raw files which were used by me during course.
-File - vote-app/run-vote-app.sh contains guidelines how to run vote app locally on k8s.
+# Vote App
+File **run-vote-app.sh** inside catalog **vote-app/** contains guidelines how to run application to vote between cats and dogs locally on k8s.
