@@ -43,3 +43,7 @@ kubectl apply -f vote-deploy-result-panda.yaml
 echo "===List all services==="
 kubectl get svc -A
 echo ""
+
+echo "===List all pods==="
+kubectl get pod -A
+echo ""
