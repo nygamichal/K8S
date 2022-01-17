@@ -34,3 +34,7 @@ kubectl <cmd> pod <POD_name>
 
 # Rollout
 kubectl rollout undo deployment <name>
+
+
+# ReplicaSets
+kubectl describe rs
