@@ -78,7 +78,7 @@ kubectl:
 
 * `kubectl get hpa` ##hpa - horizontal pod autoscaler
 
-NAME               REFERENCE                     TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+NAME               REFERENCE                     TARGETS         MINPODS   MAXPODS   REPLICAS   AGE<br>
 <rs_name>          ReplicaSet/<rs_name>          <unknown>/20%   1         4         1          56s
 
 
