@@ -28,6 +28,9 @@ Kubelet is separate system service dedicated for Kubernetes which handles runnin
 * `minikube start/stop`
 * `minikube status`
 * `minikube dashboard`
+* `minikube ip`
+* `minikube addons list` ## List addons for minikube
+* `minikube addons enable ingress` ## Enable ingress
 
 # k8s configuration
 * `kubectl cluster-info`
@@ -81,8 +84,13 @@ kubectl:
 NAME               REFERENCE                     TARGETS         MINPODS   MAXPODS   REPLICAS   AGE<br>
 <rs_name>          ReplicaSet/<rs_name>          <unknown>/20%   1         4         1          56s
 
+# Ingress
+* `kubectl get ingress`
+* `kubectl describe ing <ing_name>`
+* `kubectl annotate ing <ing_name> nginx.ingress.kubernetes.io/auth-url=https://httpbin.org/basic-auth/rick/M0rty`
 
-
-# Rollout
+# Rollout 
+  Rollout move actual deploy to previous correctly working one, before the changes.
 * `kubectl rollout undo deployment <name>`
+* `kubectl rollout history deploy/<name>` 
 
