@@ -93,4 +93,8 @@ NAME               REFERENCE                     TARGETS         MINPODS   MAXPO
   Rollout move actual deploy to previous correctly working one, before the changes.
 * `kubectl rollout undo deployment <name>`
 * `kubectl rollout history deploy/<name>` 
-
+  
+# Context
+* `kubectl config view --minify`
+* `kubectl config get-contexts`
+* `kubectl config use-contexts minikube`
