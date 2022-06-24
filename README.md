@@ -25,6 +25,9 @@ Kubelet is separate system service dedicated for Kubernetes which handles runnin
 
 ---------------------
 # Minikube
+Installation path:
+https://github.com/kubernetes/minikube/releases/tag/v1.25.1
+
 * `minikube start/stop`
 * `minikube status`
 * `minikube dashboard`
@@ -41,6 +44,7 @@ Kubelet is separate system service dedicated for Kubernetes which handles runnin
 # extended table
 * `kubectl api-resources -o wide`
 
+kubectl create -f <yaml_file>.yaml
 kubectl apply -f <yaml_file>.yaml
 kubectl delete -f <yaml_file>.yaml
 
@@ -98,3 +102,6 @@ NAME               REFERENCE                     TARGETS         MINPODS   MAXPO
 * `kubectl config view --minify`
 * `kubectl config get-contexts`
 * `kubectl config use-contexts minikube`
+
+### Port-forward
+kubectl port-forward pod/ghost-aoe-123-zxc 2368:2368
