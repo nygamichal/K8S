@@ -1,9 +1,13 @@
 #! /bin/bash
 
 # Minikube
+Installation path:
+https://github.com/kubernetes/minikube/releases/tag/v1.25.1
+
 minikube start/stop
 minikube status
 minikube dashboard
+
 
 # k8s configuration
 kubectl cluster-info
@@ -62,3 +66,5 @@ NAME               REFERENCE                     TARGETS         MINPODS   MAXPO
 ### Rollout
 kubectl rollout undo deployment <name>
 
+### Port-forward
+kubectl port-forward pod/ghost-aoe-123-zxc 2368:2368
